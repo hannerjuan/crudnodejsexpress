@@ -9,12 +9,21 @@ const getUsuarioById = async (id) => {
     return await usuarioRepository.getUsuarioById(id);
 };
 
+// const createUsuario = async (usuario) => {
+//     if (!usuario.nombre || !usuario.login || !usuario.email || !usuario.password) {
+//         throw new Error("Datos de usuario incompletos");
+//     }
+//     return await usuarioRepository.createUsuario(usuario);
+// };
+
 const createUsuario = async (usuario) => {
-    if (!usuario.nombre || !usuario.login || !usuario.email || !usuario.password) {
+    const { nombre, login, email, password } = usuario;
+    if (!nombre || !login || !email || !password) {
         throw new Error("Datos de usuario incompletos");
     }
-    return await usuarioRepository.createUsuario(usuario);
+    return await usuarioRepository.createUsuario(nombre, login, email, password);
 };
+
 
 const updateUsuario = async (id, usuario) => {
     return await usuarioRepository.updateUsuario(id, usuario);
