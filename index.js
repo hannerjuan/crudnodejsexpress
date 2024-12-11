@@ -16,6 +16,7 @@ const temaRoutes = require("./routes/temaRoutes");
 const muestraRoutes = require("./routes/muestraRoutes");
 const respuestaRoutes = require("./routes/respuestaRoutes");
 const authRoutes = require('./routes/authRoutes');
+const itemRoutes = require('./routes/itemRoutes')
 
 
 // app.use(cors());
@@ -41,6 +42,7 @@ app.use("/temas", temaRoutes);
 app.use("/muestras", muestraRoutes);
 app.use("/respuestas", respuestaRoutes);
 app.use('/login', authRoutes);
+app.use('/items', itemRoutes);
 
 
 
